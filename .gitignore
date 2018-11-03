@@ -102,3 +102,4 @@ VokTrainerServer.iml
 src/main/resources/
 src/test/
 target/generated-sources/
+src/main/java/DB.java

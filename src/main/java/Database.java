@@ -2,20 +2,21 @@ import java.sql.*;
 
 public class Database {
 	
-	private final String host = "";
-	private final String database = "";
-	private final String username = "";
-	private final String password = "";
 	private Connection connection = null;
 	private boolean isConnectionValid = false;
 	
 	public Database() {
 		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
 			DriverManager.setLoginTimeout(5);
-			connection = DriverManager.getConnection("jdbc:mysql://" + host + ":3306/" + database, username, password);
+			
+			String host = DB.HOSTNAME;
+			String database = DB.DATABASE;
+			String username = DB.USERNAME;
+			String password = DB.PASSWORD;
+			
+			connection = DriverManager.getConnection("jdbc:mariadb://" + host + ":3306/" + database, username, password);
 			isConnectionValid = true;
-		} catch (ClassNotFoundException | SQLException e) {
+		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 	}
