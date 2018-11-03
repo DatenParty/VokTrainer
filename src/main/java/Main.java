@@ -5,12 +5,15 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.HashMap;
 import java.util.Map;
 
 import static net.freeutils.httpserver.HTTPServer.*;
 
 public class Main {
 	static Database db = new Database();
+	private static HashMap<String, Integer> languages = new HashMap();
+	
 	
 	public static void main(String[] args) {
 		Log.status("starting server");
@@ -37,6 +40,10 @@ public class Main {
 			Log.critical("Aborting Server");
 			System.exit(-1);
 		}
+		
+		languages.put("DE", 0);
+		languages.put("EN", 1);
+		languages.put("ES", 2);
 	}
 	
 	private static void sendResponse(HTTPServer.Response response, int status, JSONObject responseObject) {
@@ -46,6 +53,27 @@ public class Main {
 		} catch (IOException e) {
 			Log.error("Response cannot be sent");
 		}
+	}
+	
+	private static Integer sendBadApiReq(HTTPServer.Response response) {
+		Log.error("[API] bad request");
+		
+		JSONObject object = new JSONObject();
+		object.put("header", new JSONObject().put("status", 400));
+		
+		sendResponse(response, 400, object);
+		return 400;
+	}
+	
+	private static String getLangQuery(Integer... langs) {
+		StringBuilder query = new StringBuilder();
+		for (int i = 0; i < langs.length; i++) {
+			
+			query.append(langs[i]);
+			query.append(",");
+		}
+		query.deleteCharAt(query.lastIndexOf(","));
+		return query.toString();
 	}
 	
 	private static class getList implements ContextHandler {
@@ -79,10 +107,7 @@ public class Main {
 				
 				Log.status("[API] good request");
 			} catch (Exception e) {
-				Log.error("[API] bad request");
-				header.put("status", 400);
-				sendResponse(response, 400, responseObject.put("header", header));
-				return 400;
+				return sendBadApiReq(response);
 			}
 			
 			ResultSet resultLang1 = db.execute(DB.getListQuery(lang1, list));
@@ -127,6 +152,64 @@ public class Main {
 	private static class addWords implements ContextHandler {
 		@Override
 		public int serve(HTTPServer.Request request, HTTPServer.Response response) throws IOException {
+			Log.warning("ADD WORD REQUEST");
+			Map<String, String> params = request.getParams();
+			
+			JSONObject responseObject = new JSONObject();
+			JSONObject header = new JSONObject();
+			
+			String lang1;
+			String word1;
+			String lang2;
+			String word2;
+			
+			try {
+				lang1 = params.get("lang1");
+				word1 = params.get("word1");
+				lang2 = params.get("lang2");
+				word2 = params.get("word2");
+				
+				Log.status("[API] good request");
+			} catch (Exception e) {
+				return sendBadApiReq(response);
+			}
+			
+			try {
+				db.update("INSERT INTO translation_words VALUES (DEFAULT,?,?)",lang1,word1);
+				ResultSet word1_set = db.execute("SELECT id_word FROM translation_words ORDER BY id_word DESC LIMIT 1;");
+				word1_set.next();
+				Integer word1_ID = word1_set.getInt("id_word");
+				
+				db.update("INSERT INTO translation_words VALUES (DEFAULT,?,?)",lang1,word1);
+				ResultSet word2_set = db.execute("SELECT id_word FROM translation_words ORDER BY id_word DESC LIMIT 1;");
+				word2_set.next();
+				Integer word2_ID = word2_set.getInt("id_word");
+				
+				
+				Integer[] langs = new Integer[3];
+				langs[0] = null;
+				langs[1] = null;
+				langs[2] = null;
+				
+				//TODO DAS IST KACKE
+				languages.get(lang1);
+				langs[languages.get(lang1)-1] = word1_ID;
+				langs[languages.get(lang2)-1] = word2_ID;
+				
+				db.execute("INSERT INTO translation_index VALUES (DEFAULT,"+ null +")");
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			
+			header.put("lang1", lang1);
+			header.put("word1", word1);
+			header.put("lang2", lang2);
+			header.put("word2", word2);
+			header.put("status", 200);
+			responseObject.put("header", header);
+			
+			sendResponse(response, 200, responseObject);
+			Log.success("[API] request handeled");
 			return 0;
 		}
 	}
@@ -134,6 +217,42 @@ public class Main {
 	private static class addList implements ContextHandler {
 		@Override
 		public int serve(HTTPServer.Request request, HTTPServer.Response response) throws IOException {
+			Log.warning("ADD LIST REQUEST");
+			Map<String, String> params = request.getParams();
+			
+			JSONObject responseObject = new JSONObject();
+			JSONObject header = new JSONObject();
+			
+			String lang1;
+			String lang2;
+			String title;
+			
+			try {
+				lang1 = params.get("lang1");
+				lang2 = params.get("lang2");
+				title = params.get("title");
+				
+				Log.status("[API] good request");
+			} catch (Exception e) {
+				return sendBadApiReq(response);
+			}
+			
+			try {
+				db.update("INSERT INTO list_Index (id_list, name, lang_1, lang_2) VALUES (DEFAULT,?,?,?)",title,lang1,lang2);
+			} catch (Exception e) {
+				Log.critical("[SQL] Something went wrong");
+				return 500;
+			}
+			Log.status("[SQL] New list created");
+			
+			header.put("lang1", lang1);
+			header.put("lang2", lang2);
+			header.put("title", title);
+			header.put("status", 200);
+			
+			responseObject.put("header", header);
+			sendResponse(response, 200, responseObject);
+			Log.success("[API] request handeled");
 			return 0;
 		}
 	}
