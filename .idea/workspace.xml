@@ -1,17 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eb367acb-9385-4929-845a-5c40a1b1b231" name="Default Changelist" comment="finished getList()">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3679dca5-3a48-4834-ba05-f1d4760a4ffc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/VokTrainer-Server-DEV.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+    <list default="true" id="eb367acb-9385-4929-845a-5c40a1b1b231" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -73,13 +64,13 @@
     <session id="-592775403">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
+          <entry key="project.closed" value="5" />
           <entry key="project.open.time.0" value="1" />
-          <entry key="project.open.time.12" value="1" />
+          <entry key="project.open.time.12" value="3" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.8" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="5" />
+          <entry key="project.opened" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -105,21 +96,21 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="cell" value="374" />
+          <entry key="cell" value="380" />
           <entry key="gitignore" value="7" />
-          <entry key="java" value="4413" />
-          <entry key="sql" value="2473" />
-          <entry key="txt" value="66" />
+          <entry key="java" value="4442" />
+          <entry key="sql" value="2489" />
+          <entry key="txt" value="71" />
           <entry key="xml" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Git file" value="7" />
-          <entry key="JAVA" value="4413" />
-          <entry key="PLAIN_TEXT" value="66" />
+          <entry key="JAVA" value="4442" />
+          <entry key="PLAIN_TEXT" value="71" />
           <entry key="SQL" value="100" />
-          <entry key="Scratch" value="2747" />
+          <entry key="Scratch" value="2769" />
           <entry key="XML" value="8" />
         </counts>
       </usages-collector>
@@ -134,8 +125,8 @@
               <file pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/src/main/java/DB.java">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="180">
-                      <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+                    <state relative-caret-position="190">
+                      <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
                     </state>
                   </provider>
                 </entry>
@@ -143,7 +134,7 @@
               <file pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/src/main/java/Database.java">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state>
+                    <state relative-caret-position="285">
                       <caret line="15" column="6" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
                       <folding>
                         <element signature="e#567#568#0" expanded="true" />
@@ -156,8 +147,8 @@
               <file pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="466">
-                      <caret line="194" selection-start-line="194" selection-end-line="194" />
+                    <state relative-caret-position="551">
+                      <caret line="236" column="34" selection-start-line="236" selection-start-column="34" selection-end-line="236" selection-end-column="34" />
                       <folding>
                         <element signature="imports" expanded="true" />
                       </folding>
@@ -168,7 +159,7 @@
               <file pinned="false" current-in-tab="false">
                 <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/3679dca5-3a48-4834-ba05-f1d4760a4ffc/console_4.sql">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="36">
+                    <state relative-caret-position="38">
                       <caret line="2" selection-start-line="2" selection-end-line="2" />
                     </state>
                   </provider>
@@ -177,12 +168,12 @@
             </leaf>
           </split-first>
           <split-second>
-            <leaf>
-              <file pinned="false" current-in-tab="false">
+            <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+              <file pinned="false" current-in-tab="true">
                 <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/3679dca5-3a48-4834-ba05-f1d4760a4ffc/console_6.sql">
                   <provider selected="true" editor-type-id="text-editor">
                     <state>
-                      <caret column="57" lean-forward="true" selection-start-column="57" selection-end-column="57" />
+                      <caret column="43" selection-start-column="43" selection-end-column="43" />
                     </state>
                   </provider>
                 </entry>
@@ -191,16 +182,16 @@
                 <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/3679dca5-3a48-4834-ba05-f1d4760a4ffc/console_7.sql">
                   <provider selected="true" editor-type-id="text-editor">
                     <state>
-                      <caret column="10" lean-forward="true" selection-start-column="10" selection-end-column="10" />
+                      <caret column="10" selection-start-column="10" selection-end-column="10" />
                     </state>
                   </provider>
                 </entry>
               </file>
-              <file pinned="false" current-in-tab="true">
+              <file pinned="false" current-in-tab="false">
                 <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/3679dca5-3a48-4834-ba05-f1d4760a4ffc/console_8.sql">
                   <provider selected="true" editor-type-id="text-editor">
                     <state>
-                      <caret column="12" selection-start-column="12" selection-end-column="12" />
+                      <caret column="36" selection-start-column="36" selection-end-column="36" />
                     </state>
                   </provider>
                 </entry>
@@ -214,7 +205,7 @@
           <split-first>
             <splitter split-orientation="vertical" split-proportion="0.3599034">
               <split-first>
-                <leaf>
+                <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
                   <file pinned="false" current-in-tab="false">
                     <entry file="das://3679dca5-3a48-4834-ba05-f1d4760a4ffc/schema/vokTrainer/table/list_items">
                       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
@@ -239,7 +230,7 @@
                 </leaf>
               </split-first>
               <split-second>
-                <leaf>
+                <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
                   <file pinned="false" current-in-tab="true">
                     <entry file="das://3679dca5-3a48-4834-ba05-f1d4760a4ffc/schema/vokTrainer/table/translation_words">
                       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
@@ -254,7 +245,7 @@
             </splitter>
           </split-first>
           <split-second>
-            <leaf>
+            <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
               <file pinned="false" current-in-tab="true">
                 <entry file="das://3679dca5-3a48-4834-ba05-f1d4760a4ffc/schema/vokTrainer/table/translation_index">
                   <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
@@ -292,10 +283,10 @@
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/3679dca5-3a48-4834-ba05-f1d4760a4ffc/console_3.sql" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/3679dca5-3a48-4834-ba05-f1d4760a4ffc/console_4.sql" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/3679dca5-3a48-4834-ba05-f1d4760a4ffc/console_7.sql" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/3679dca5-3a48-4834-ba05-f1d4760a4ffc/console_6.sql" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/3679dca5-3a48-4834-ba05-f1d4760a4ffc/console_8.sql" />
         <option value="$PROJECT_DIR$/src/main/java/DB.java" />
         <option value="$PROJECT_DIR$/src/main/java/Main.java" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/3679dca5-3a48-4834-ba05-f1d4760a4ffc/console_6.sql" />
       </list>
     </option>
   </component>
@@ -314,9 +305,9 @@
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="720" />
-    <option name="y" value="-21" />
-    <option name="width" value="1947" />
-    <option name="height" value="1107" />
+    <option name="y" value="-22" />
+    <option name="width" value="1948" />
+    <option name="height" value="1108" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -363,7 +354,7 @@
     <property name="add_unversioned_files" value="$PROJECT_DIR$/src/main/java/DB.java" />
     <property name="android.sdk.path" value="C:/Program Files (x86)/Android/android-sdk" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541271097602" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541271135240" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -416,7 +407,9 @@
       <workItem from="1541178359780" duration="3680000" />
       <workItem from="1541188689424" duration="15711000" />
       <workItem from="1541245899633" duration="7892000" />
-      <workItem from="1541262960823" duration="7949000" />
+      <workItem from="1541262960823" duration="8184000" />
+      <workItem from="1541353368764" duration="41000" />
+      <workItem from="1541405120001" duration="325000" />
     </task>
     <task id="LOCAL-00001" summary="Force Push">
       <created>1541234591839</created>
@@ -446,11 +439,18 @@
       <option name="project" value="LOCAL" />
       <updated>1541253396230</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="stuff">
+      <created>1541271145045</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1541271145045</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35285000" />
+    <option name="totallyTimeSpent" value="35886000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -462,11 +462,11 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="2575" height="1424" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49806452" visible="true" weight="0.09781312" />
-      <window_info id="Structure" order="1" sideWeight="0.5019355" side_tool="true" visible="true" weight="0.09781312" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4965035" visible="true" weight="0.1" />
+      <window_info id="Structure" order="1" sideWeight="0.5034965" side_tool="true" visible="true" weight="0.1" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
@@ -475,7 +475,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32997677" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.49940357" visible="true" weight="0.39969015" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49940357" weight="0.39969015" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.24554609" />
@@ -490,7 +490,7 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="right" id="Database" order="5" visible="true" weight="0.19125248" />
+      <window_info anchor="right" id="Database" order="5" visible="true" weight="0.19060403" />
       <window_info anchor="right" id="Theme Preview" order="6" />
       <window_info anchor="right" id="Remote Host" order="7" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
@@ -508,40 +508,23 @@
     <MESSAGE value="added gitignore" />
     <MESSAGE value="added stuff" />
     <MESSAGE value="finished getList()" />
-    <option name="LAST_COMMIT_MESSAGE" value="finished getList()" />
+    <MESSAGE value="stuff" />
+    <option name="LAST_COMMIT_MESSAGE" value="stuff" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Main.java</url>
-          <line>196</line>
+          <line>198</line>
           <properties />
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Main.java</url>
-          <line>177</line>
+          <line>195</line>
           <properties />
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Main.java</url>
-          <line>182</line>
-          <properties />
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Main.java</url>
-          <line>180</line>
-          <properties />
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Main.java</url>
-          <line>185</line>
-          <properties />
-          <option name="timeStamp" value="10" />
+          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -589,6 +572,48 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/DB.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Database.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="15" column="6" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
+          <folding>
+            <element signature="e#567#568#0" expanded="true" />
+            <element signature="e#603#604#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/3679dca5-3a48-4834-ba05-f1d4760a4ffc/console_4.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="551">
+          <caret line="236" column="34" selection-start-line="236" selection-start-column="34" selection-end-line="236" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/3679dca5-3a48-4834-ba05-f1d4760a4ffc/console_8.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="36" selection-start-column="36" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
     <entry file="das://3679dca5-3a48-4834-ba05-f1d4760a4ffc/schema/vokTrainer/table/list_items">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -599,56 +624,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/3679dca5-3a48-4834-ba05-f1d4760a4ffc/console_4.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://3679dca5-3a48-4834-ba05-f1d4760a4ffc/schema/vokTrainer/table/list_Index">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/3679dca5-3a48-4834-ba05-f1d4760a4ffc/console_7.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="10" lean-forward="true" selection-start-column="10" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/3679dca5-3a48-4834-ba05-f1d4760a4ffc/console_6.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="57" lean-forward="true" selection-start-column="57" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/3679dca5-3a48-4834-ba05-f1d4760a4ffc/console_8.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="12" selection-start-column="12" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/DB.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Database.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="15" column="6" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
-          <folding>
-            <element signature="e#567#568#0" expanded="true" />
-            <element signature="e#603#604#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -659,6 +638,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/3679dca5-3a48-4834-ba05-f1d4760a4ffc/console_7.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="10" selection-start-column="10" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
     <entry file="das://3679dca5-3a48-4834-ba05-f1d4760a4ffc/schema/vokTrainer/table/translation_words">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -666,13 +652,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/3679dca5-3a48-4834-ba05-f1d4760a4ffc/console_6.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="466">
-          <caret line="194" selection-start-line="194" selection-end-line="194" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state>
+          <caret column="43" selection-start-column="43" selection-end-column="43" />
         </state>
       </provider>
     </entry>
