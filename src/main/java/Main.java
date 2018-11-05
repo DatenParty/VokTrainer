@@ -73,21 +73,6 @@ public class Main {
 			Integer list;
 			
 			try {
-				/* @obsolete and wrong
-				
-				lang1 = params.get("lang1");
-				lang2 = params.get("lang2");
-				
-				/*	This is super weird code but it works.
-				/
-				/	Expl:	The "try" already catches and responses when the list parameter has a bad request.
-				/				I'm just duplication a bad request for list when lang1 or lang2 are nulls, it's the same error anyway.
-				/				(Had to write the explanation in case I forget what I have done here)
-				/
-				if (lang1.isEmpty() || lang2.isEmpty()) {
-					params.get("not existing");
-				}
-				*/
 				list = Integer.parseInt(params.get("list"));
 				
 				Log.status("[API] good request");
