@@ -5,14 +5,12 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.HashMap;
 import java.util.Map;
 
 import static net.freeutils.httpserver.HTTPServer.*;
 
 public class Main {
-	static Database db = new Database();
-	private static HashMap<String, Integer> languages = new HashMap();
+	private static Database db = new Database();
 	
 	
 	public static void main(String[] args) {
@@ -25,6 +23,7 @@ public class Main {
 			host.addContext("/get/list", new getList());
 			host.addContext("/add/words", new addWords());
 			host.addContext("/add/list", new addList());
+			host.addContext("/add/content", new addContent());
 			
 			try {
 				server.start();
@@ -41,9 +40,6 @@ public class Main {
 			System.exit(-1);
 		}
 		
-		languages.put("DE", 0);
-		languages.put("EN", 1);
-		languages.put("ES", 2);
 	}
 	
 	private static void sendResponse(HTTPServer.Response response, int status, JSONObject responseObject) {
@@ -65,17 +61,6 @@ public class Main {
 		return 400;
 	}
 	
-	private static String getLangQuery(Integer... langs) {
-		StringBuilder query = new StringBuilder();
-		for (int i = 0; i < langs.length; i++) {
-			
-			query.append(langs[i]);
-			query.append(",");
-		}
-		query.deleteCharAt(query.lastIndexOf(","));
-		return query.toString();
-	}
-	
 	private static class getList implements ContextHandler {
 		@Override
 		public int serve(HTTPServer.Request request, HTTPServer.Response response) throws IOException {
@@ -85,11 +70,11 @@ public class Main {
 			JSONObject responseObject = new JSONObject();
 			JSONObject header = new JSONObject();
 			
-			String lang1;
-			String lang2;
 			Integer list;
 			
 			try {
+				/* @obsolete and wrong
+				
 				lang1 = params.get("lang1");
 				lang2 = params.get("lang2");
 				
@@ -98,16 +83,31 @@ public class Main {
 				/	Expl:	The "try" already catches and responses when the list parameter has a bad request.
 				/				I'm just duplication a bad request for list when lang1 or lang2 are nulls, it's the same error anyway.
 				/				(Had to write the explanation in case I forget what I have done here)
-				*/
+				/
 				if (lang1.isEmpty() || lang2.isEmpty()) {
 					params.get("not existing");
 				}
-				
+				*/
 				list = Integer.parseInt(params.get("list"));
 				
 				Log.status("[API] good request");
 			} catch (Exception e) {
 				return sendBadApiReq(response);
+			}
+			
+			String lang1;
+			String lang2;
+			
+			try {
+				ResultSet getLangs = db.execute("SELECT lang_1,lang_2 FROM list_Index WHERE id_list=?", list);
+				getLangs.next();
+				lang1 = getLangs.getString("lang_1");
+				lang2 = getLangs.getString("lang_2");
+				
+			} catch (SQLException e) {
+				e.printStackTrace();
+				sendBadApiReq(response);
+				return 400;
 			}
 			
 			ResultSet resultLang1 = db.execute(DB.getListQuery(lang1, list));
@@ -178,25 +178,16 @@ public class Main {
 				db.update("INSERT INTO translation_words VALUES (DEFAULT,?,?)",lang1,word1);
 				ResultSet word1_set = db.execute("SELECT id_word FROM translation_words ORDER BY id_word DESC LIMIT 1;");
 				word1_set.next();
-				Integer word1_ID = word1_set.getInt("id_word");
+				int word1_ID = word1_set.getInt("id_word");
 				
-				db.update("INSERT INTO translation_words VALUES (DEFAULT,?,?)",lang1,word1);
+				db.update("INSERT INTO translation_words VALUES (DEFAULT,?,?)",lang2,word2);
 				ResultSet word2_set = db.execute("SELECT id_word FROM translation_words ORDER BY id_word DESC LIMIT 1;");
 				word2_set.next();
-				Integer word2_ID = word2_set.getInt("id_word");
+				int word2_ID = word2_set.getInt("id_word");
 				
 				
-				Integer[] langs = new Integer[3];
-				langs[0] = null;
-				langs[1] = null;
-				langs[2] = null;
-				
-				//TODO DAS IST KACKE
-				languages.get(lang1);
-				langs[languages.get(lang1)-1] = word1_ID;
-				langs[languages.get(lang2)-1] = word2_ID;
-				
-				db.execute("INSERT INTO translation_index VALUES (DEFAULT,"+ null +")");
+				db.execute("INSERT INTO translation_index SET " + lang1 + "='" + word1_ID + "'," + lang2 + "='" + word2_ID + "'");
+				//INSERT INTO translation_index SET de = '21',en = '33'
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -253,6 +244,37 @@ public class Main {
 			responseObject.put("header", header);
 			sendResponse(response, 200, responseObject);
 			Log.success("[API] request handeled");
+			return 0;
+		}
+	}
+	
+	private static class addContent implements ContextHandler {
+		@Override
+		public int serve(HTTPServer.Request request, HTTPServer.Response response) throws IOException {
+			Map<String, String> params = request.getParams();
+			
+			JSONObject responseObject = new JSONObject();
+			JSONObject header = new JSONObject();
+			JSONArray wordsResp = new JSONArray();
+			
+			int list_id = Integer.parseInt(params.get("list"));
+			String words = params.get("words");
+			
+			
+			String[] wordsArray = words.split(",");
+			for (int i = 0; i < wordsArray.length; i++) {
+				try {
+					db.execute("INSERT INTO list_items VALUES (" + list_id + ", " + wordsArray[i] + ")");
+					wordsResp.put(wordsArray[i]);
+				} catch (Exception e) {
+					sendBadApiReq(response);
+				}
+			}
+			
+			header.put("status", 200);
+			responseObject.put("header", header.put("added", wordsResp));
+			
+			sendResponse(response, 200, responseObject);
 			return 0;
 		}
 	}
