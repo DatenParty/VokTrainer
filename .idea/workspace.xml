@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="eb367acb-9385-4929-845a-5c40a1b1b231" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -66,13 +64,13 @@
     <session id="-592775403">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="5" />
+          <entry key="project.closed" value="7" />
           <entry key="project.open.time.0" value="1" />
-          <entry key="project.open.time.12" value="3" />
+          <entry key="project.open.time.12" value="4" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.8" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="7" />
+          <entry key="project.opened" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -100,17 +98,17 @@
         <counts>
           <entry key="cell" value="380" />
           <entry key="gitignore" value="7" />
-          <entry key="java" value="5088" />
+          <entry key="java" value="5109" />
           <entry key="sql" value="2498" />
-          <entry key="txt" value="89" />
+          <entry key="txt" value="143" />
           <entry key="xml" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Git file" value="7" />
-          <entry key="JAVA" value="5087" />
-          <entry key="PLAIN_TEXT" value="89" />
+          <entry key="JAVA" value="5108" />
+          <entry key="PLAIN_TEXT" value="143" />
           <entry key="SQL" value="101" />
           <entry key="Scratch" value="2778" />
           <entry key="XML" value="8" />
@@ -136,7 +134,7 @@
               <file pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/src/main/java/DB.java">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="190">
+                    <state relative-caret-position="180">
                       <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
                     </state>
                   </provider>
@@ -145,7 +143,7 @@
               <file pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/src/main/java/Database.java">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="270">
+                    <state relative-caret-position="522">
                       <caret line="31" selection-start-line="31" selection-end-line="31" />
                       <folding>
                         <element signature="e#567#568#0" expanded="true" />
@@ -158,11 +156,8 @@
               <file pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="-76">
-                      <caret line="59" column="40" lean-forward="true" selection-start-line="59" selection-start-column="40" selection-end-line="59" selection-end-column="40" />
-                      <folding>
-                        <element signature="imports" expanded="true" />
-                      </folding>
+                    <state>
+                      <caret column="43" lean-forward="true" selection-start-column="43" selection-end-column="43" />
                     </state>
                   </provider>
                 </entry>
@@ -170,7 +165,7 @@
               <file pinned="false" current-in-tab="false">
                 <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/3679dca5-3a48-4834-ba05-f1d4760a4ffc/console_4.sql">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="38">
+                    <state relative-caret-position="36">
                       <caret line="2" selection-start-line="2" selection-end-line="2" />
                     </state>
                   </provider>
@@ -316,9 +311,9 @@
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="720" />
-    <option name="y" value="-22" />
-    <option name="width" value="1948" />
-    <option name="height" value="1108" />
+    <option name="y" value="-24" />
+    <option name="width" value="1950" />
+    <option name="height" value="1110" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -365,8 +360,8 @@
     <property name="add_unversioned_files" value="$PROJECT_DIR$/src/main/java/DB.java" />
     <property name="android.sdk.path" value="C:/Program Files (x86)/Android/android-sdk" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541409253436" />
-    <property name="database.console.LAST_STATE" value="false" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541410116209" />
+    <property name="database.console.LAST_STATE" value="true" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Artifacts" />
@@ -420,7 +415,8 @@
       <workItem from="1541245899633" duration="7892000" />
       <workItem from="1541262960823" duration="8184000" />
       <workItem from="1541353368764" duration="41000" />
-      <workItem from="1541405120001" duration="4056000" />
+      <workItem from="1541405120001" duration="4991000" />
+      <workItem from="1541425904438" duration="108000" />
     </task>
     <task id="LOCAL-00001" summary="Force Push">
       <created>1541234591839</created>
@@ -464,11 +460,25 @@
       <option name="project" value="LOCAL" />
       <updated>1541405510457</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="finished all planned API calls&#10;TODO ist entfernt">
+      <created>1541409320463</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1541409320463</updated>
+    </task>
+    <task id="LOCAL-00008" summary="stuff">
+      <created>1541425966823</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1541425966823</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39617000" />
+    <option name="totallyTimeSpent" value="40660000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -480,10 +490,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1536" height="864" extended-state="6" />
+    <frame x="-7" y="-7" width="2575" height="1424" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49544626" weight="0.1" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49544626" visible="true" weight="0.09980119" />
       <window_info id="Structure" order="1" sideWeight="0.50455374" side_tool="true" weight="0.1" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -492,7 +502,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.07838179" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.49810368" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49940357" weight="0.3986014" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -502,50 +512,18 @@
       <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.4998012" weight="0.23005421" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5005964" side_tool="true" weight="0.39969015" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.32997677" />
-      <window_info anchor="bottom" id="Database Console" order="12" weight="0.23216783" />
+      <window_info active="true" anchor="bottom" id="Database Console" order="12" visible="true" weight="0.23160341" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="right" id="Database" order="5" weight="0.19060403" />
+      <window_info anchor="right" id="Database" order="5" visible="true" weight="0.19045725" />
       <window_info anchor="right" id="Theme Preview" order="6" />
       <window_info anchor="right" id="Remote Host" order="7" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
       <window_info anchor="right" id="Maven Projects" order="9" />
     </layout>
-    <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49544626" weight="0.1" />
-      <window_info id="Structure" order="1" sideWeight="0.50455374" side_tool="true" weight="0.1" />
-      <window_info id="Image Layers" order="2" />
-      <window_info id="Designer" order="3" />
-      <window_info id="UI Designer" order="4" />
-      <window_info id="Capture Tool" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.086713284" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.49940357" visible="true" weight="0.3986014" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.24554609" />
-      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" order="8" weight="0.22927962" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.4998012" weight="0.23005421" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5005964" side_tool="true" weight="0.39969015" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.32997677" />
-      <window_info anchor="bottom" id="Database Console" order="12" weight="0.23216783" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="right" id="Database" order="5" weight="0.19060403" />
-      <window_info anchor="right" id="Theme Preview" order="6" />
-      <window_info anchor="right" id="Remote Host" order="7" />
-      <window_info anchor="right" id="Palette&#9;" order="8" />
-      <window_info anchor="right" id="Maven Projects" order="9" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -558,9 +536,10 @@
     <MESSAGE value="added gitignore" />
     <MESSAGE value="added stuff" />
     <MESSAGE value="finished getList()" />
-    <MESSAGE value="stuff" />
     <MESSAGE value="TODO DAS IST KACKE" />
-    <option name="LAST_COMMIT_MESSAGE" value="TODO DAS IST KACKE" />
+    <MESSAGE value="finished all planned API calls&#10;TODO ist entfernt" />
+    <MESSAGE value="stuff" />
+    <option name="LAST_COMMIT_MESSAGE" value="stuff" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/3679dca5-3a48-4834-ba05-f1d4760a4ffc/console.sql">
@@ -605,17 +584,35 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/DB.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Database.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="522">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
+          <folding>
+            <element signature="e#567#568#0" expanded="true" />
+            <element signature="e#603#604#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/3679dca5-3a48-4834-ba05-f1d4760a4ffc/console_4.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
+        <state relative-caret-position="36">
           <caret line="2" selection-start-line="2" selection-end-line="2" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/3679dca5-3a48-4834-ba05-f1d4760a4ffc/console_8.sql">
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/3679dca5-3a48-4834-ba05-f1d4760a4ffc/console_6.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="36" selection-start-column="36" selection-end-column="36" />
+          <caret column="20" selection-end-column="53" />
         </state>
       </provider>
     </entry>
@@ -626,17 +623,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://3679dca5-3a48-4834-ba05-f1d4760a4ffc/schema/vokTrainer/table/translation_words">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/3679dca5-3a48-4834-ba05-f1d4760a4ffc/console_8.sql">
+      <provider selected="true" editor-type-id="text-editor">
         <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://3679dca5-3a48-4834-ba05-f1d4760a4ffc/schema/vokTrainer/table/translation_index">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
+          <caret column="36" selection-start-column="36" selection-end-column="36" />
         </state>
       </provider>
     </entry>
@@ -650,6 +640,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="das://3679dca5-3a48-4834-ba05-f1d4760a4ffc/schema/vokTrainer/table/translation_index">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://3679dca5-3a48-4834-ba05-f1d4760a4ffc/schema/vokTrainer/table/translation_words">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
     <entry file="das://3679dca5-3a48-4834-ba05-f1d4760a4ffc/schema/vokTrainer/table/list_Index">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -657,38 +661,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Database.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="31" selection-start-line="31" selection-end-line="31" />
-          <folding>
-            <element signature="e#567#568#0" expanded="true" />
-            <element signature="e#603#604#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/DB.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/3679dca5-3a48-4834-ba05-f1d4760a4ffc/console_6.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="20" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-76">
-          <caret line="59" column="40" lean-forward="true" selection-start-line="59" selection-start-column="40" selection-end-line="59" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state>
+          <caret column="43" lean-forward="true" selection-start-column="43" selection-end-column="43" />
         </state>
       </provider>
     </entry>
