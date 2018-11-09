@@ -10,19 +10,38 @@ import java.util.Map;
 import static net.freeutils.httpserver.HTTPServer.*;
 
 public class Main {
-	private static Database db = new Database();
+	private static Database db;
 	
 	
 	public static void main(String[] args) {
-		Log.status("starting server");
+		Log.status("starting vokTrainer Server".toUpperCase());
+		
+		db  = new Database();
 		if (db.isValid()) {
 			Log.success("Database connection established");
 			
 			HTTPServer server = new HTTPServer(1337);
 			VirtualHost host = server.getVirtualHost(null);
+			//All responses have statuses in header to check for errors
+			
+			//params: --												| returns header(request params),results(lists)
+			//really, all it does is returning all lists from list_index
+			host.addContext("/get/lists", new getLists());
+			
+			//params: list_id										| returns header(request params),results(vocabulary)
+			//returns vocabulary for specific list
 			host.addContext("/get/list", new getList());
-			host.addContext("/add/words", new addWords());
+			
+			//params: lang1,word1,lang2,word2	| returns header(request params)
+			//adds new word to directory
+			host.addContext("/add/words", new addWord());
+			
+			//params: titles,lang1,lang2				| returns header(list_id,request params)
+			//creates list
 			host.addContext("/add/list", new addList());
+			
+			//params: id_list,id_translation		| returns header(request params)
+			//connects vocabulary to lists
 			host.addContext("/add/content", new addContent());
 			
 			try {
@@ -51,6 +70,11 @@ public class Main {
 		}
 	}
 	
+	/**
+	 * @param 	response	httpserver response
+	 * @return	json with status 400, http status 400
+	 * @see			HTTPServer.Response
+	 */
 	private static Integer sendBadApiReq(HTTPServer.Response response) {
 		Log.error("[API] bad request");
 		
@@ -61,6 +85,9 @@ public class Main {
 		return 400;
 	}
 	
+	/**
+	 *
+	 */
 	private static class getList implements ContextHandler {
 		@Override
 		public int serve(HTTPServer.Request request, HTTPServer.Response response) throws IOException {
@@ -134,7 +161,41 @@ public class Main {
 		}
 	}
 	
-	private static class addWords implements ContextHandler {
+	private static class getLists implements ContextHandler {
+		@Override
+		public int serve(HTTPServer.Request request, HTTPServer.Response response) throws IOException {
+			JSONObject responseObject = new JSONObject();
+			JSONObject header = new JSONObject();
+			JSONArray results = new JSONArray();
+			
+			try {
+				ResultSet resultSet = db.execute("SELECT * FROM list_Index");
+				
+				while (resultSet.next()) {
+					JSONObject result = new JSONObject();
+					
+					result.put("id", resultSet.getInt("id_list"));
+					result.put("name", resultSet.getString("name"));
+					result.put("lang_1", resultSet.getString("lang_1"));
+					result.put("lang_2", resultSet.getString("lang_2"));
+					
+					results.put(result);
+				}
+				
+				header.put("status", 200);
+				responseObject.put("results", results);
+				responseObject.put("header", header);
+				
+				sendResponse(response, 200, responseObject);
+				return 0;
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			return 0;
+		}
+	}
+		
+		private static class addWord implements ContextHandler {
 		@Override
 		public int serve(HTTPServer.Request request, HTTPServer.Response response) throws IOException {
 			Log.warning("ADD WORD REQUEST");
@@ -171,8 +232,9 @@ public class Main {
 				int word2_ID = word2_set.getInt("id_word");
 				
 				
-				db.execute("INSERT INTO translation_index SET " + lang1 + "='" + word1_ID + "'," + lang2 + "='" + word2_ID + "'");
+				db.execute("INSERT INTO dictionary SET " + lang1 + "='" + word1_ID + "'," + lang2 + "='" + word2_ID + "'");
 				//INSERT INTO translation_index SET de = '21',en = '33'
+				header.put("id_dictionary", db.execute("SELECT id_dictionary AS id FROM dictionary ORDER BY id_dictionary DESC LIMIT 1;").getInt("id"));
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -213,8 +275,12 @@ public class Main {
 				return sendBadApiReq(response);
 			}
 			
+			int list_id;
+			
 			try {
 				db.update("INSERT INTO list_Index (id_list, name, lang_1, lang_2) VALUES (DEFAULT,?,?,?)",title,lang1,lang2);
+				list_id = db.execute("SELECT id_list FROM list_Index ORDER BY id_list DESC LIMIT 1;").getInt("id_list");
+			
 			} catch (Exception e) {
 				Log.critical("[SQL] Something went wrong");
 				return 500;
@@ -224,6 +290,7 @@ public class Main {
 			header.put("lang1", lang1);
 			header.put("lang2", lang2);
 			header.put("title", title);
+			header.put("list_id", list_id);
 			header.put("status", 200);
 			
 			responseObject.put("header", header);
@@ -247,10 +314,10 @@ public class Main {
 			
 			
 			String[] wordsArray = words.split(",");
-			for (int i = 0; i < wordsArray.length; i++) {
+			for (String aWordsArray : wordsArray) {
 				try {
-					db.execute("INSERT INTO list_items VALUES (" + list_id + ", " + wordsArray[i] + ")");
-					wordsResp.put(wordsArray[i]);
+					db.execute("INSERT INTO list_items VALUES (" + list_id + ", " + aWordsArray + ")");
+					wordsResp.put(aWordsArray);
 				} catch (Exception e) {
 					sendBadApiReq(response);
 				}
