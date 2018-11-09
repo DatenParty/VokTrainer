@@ -28,13 +28,17 @@ public class Main {
 			//really, all it does is returning all lists from list_index
 			host.addContext("/get/lists", new getLists());
 			
+			//params: lang											| returns header(request params),results(array(id,word))
+			//returns all words connected to a specific lang
+			host.addContext("/get/words", new getWords());
+			
 			//params: list_id										| returns header(request params),results(vocabulary)
 			//returns vocabulary for specific list
 			host.addContext("/get/list", new getList());
 			
 			//params: lang1,word1,lang2,word2	| returns header(request params)
 			//adds new word to directory
-			host.addContext("/add/words", new addWord());
+			host.addContext("/add/word", new addWord());
 			
 			//params: titles,lang1,lang2				| returns header(list_id,request params)
 			//creates list
@@ -194,6 +198,48 @@ public class Main {
 			return 0;
 		}
 	}
+	
+	private static class getWords implements ContextHandler {
+		
+		@Override
+		public int serve(HTTPServer.Request request, HTTPServer.Response response) throws IOException {
+			Map<String, String> params = request.getParams();
+			
+			JSONObject responseObject = new JSONObject();
+			JSONObject header = new JSONObject();
+			JSONArray results = new JSONArray();
+			
+			String lang;
+			try {
+				lang = params.get("lang");
+			} catch (Exception e) {
+				e.printStackTrace();
+				sendBadApiReq(response);
+				return 400;
+			}
+			
+			ResultSet set = db.execute("SELECT id_word,word FROM translation_words WHERE lang=?", lang);
+			try {
+				while (set.next()) {
+					JSONObject item = new JSONObject();
+					item.put("id", set.getInt("id_word"));
+					item.put("word", set.getString("word"));
+					results.put(item);
+				}
+			} catch (SQLException e) {
+				sendBadApiReq(response);
+			}
+			
+			
+			header.put("lang", lang);
+			header.put("status",200);
+			
+			responseObject.put("header", header);
+			responseObject.put("results", results);
+			sendResponse(response, 200, responseObject);
+			return 0;
+		}
+	}
 		
 		private static class addWord implements ContextHandler {
 		@Override
@@ -234,7 +280,9 @@ public class Main {
 				
 				db.execute("INSERT INTO dictionary SET " + lang1 + "='" + word1_ID + "'," + lang2 + "='" + word2_ID + "'");
 				//INSERT INTO translation_index SET de = '21',en = '33'
-				header.put("id_dictionary", db.execute("SELECT id_dictionary AS id FROM dictionary ORDER BY id_dictionary DESC LIMIT 1;").getInt("id"));
+				ResultSet set = db.execute("SELECT id_dictionary AS id FROM dictionary ORDER BY id_dictionary DESC LIMIT 1;");
+				set.next();
+				header.put("id_dictionary", set.getInt("id"));
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -330,4 +378,6 @@ public class Main {
 			return 0;
 		}
 	}
+	
+
 }
