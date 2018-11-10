@@ -6,7 +6,7 @@
 
   <groupId>github.m4schini</groupId>
   <artifactId>VokTrainer-Server</artifactId>
-  <version>dev-1.0.0</version>
+  <version>1.0.0-dev</version>
 
   <dependencies>
     <!-- https://mvnrepository.com/artifact/net.freeutils/jlhttp -->
