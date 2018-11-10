@@ -37,7 +37,7 @@ public class Main {
 			host.addContext("/get/list", new getList());
 			
 			//params: lang1,word1,lang2,word2	| returns header(request params)
-			//adds new word to directory
+			//adds new word to dictionary
 			host.addContext("/add/word", new addWord());
 			
 			//params: titles,lang1,lang2				| returns header(list_id,request params)
@@ -285,6 +285,8 @@ public class Main {
 				header.put("id_dictionary", set.getInt("id"));
 			} catch (Exception e) {
 				e.printStackTrace();
+				sendBadApiReq(response);
+				return 400;
 			}
 			
 			header.put("lang1", lang1);
@@ -326,9 +328,12 @@ public class Main {
 			int list_id;
 			
 			try {
-				db.update("INSERT INTO list_Index (id_list, name, lang_1, lang_2) VALUES (DEFAULT,?,?,?)",title,lang1,lang2);
-				list_id = db.execute("SELECT id_list FROM list_Index ORDER BY id_list DESC LIMIT 1;").getInt("id_list");
-			
+				db.update("INSERT INTO list_Index (id_list, name, lang_1, lang_2) VALUES (DEFAULT,?,?,?)", title, lang1, lang2);
+				
+				ResultSet set = db.execute("SELECT id_list FROM list_Index ORDER BY id_list DESC LIMIT 1");
+				set.next();
+				list_id = set.getInt("id_list");
+				
 			} catch (Exception e) {
 				Log.critical("[SQL] Something went wrong");
 				return 500;
