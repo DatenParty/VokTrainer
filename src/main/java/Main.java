@@ -168,6 +168,7 @@ public class Main {
 	private static class getLists implements ContextHandler {
 		@Override
 		public int serve(HTTPServer.Request request, HTTPServer.Response response) throws IOException {
+			Log.warning("NEW getLISTS REQUEST");
 			JSONObject responseObject = new JSONObject();
 			JSONObject header = new JSONObject();
 			JSONArray results = new JSONArray();
@@ -191,11 +192,14 @@ public class Main {
 				responseObject.put("header", header);
 				
 				sendResponse(response, 200, responseObject);
+				Log.status("everything worked.");
 				return 0;
 			} catch (Exception e) {
-				e.printStackTrace();
+				//e.printStackTrace();
+				//super helpful error
+				Log.error("Something went wrong.");
+				return 400;
 			}
-			return 0;
 		}
 	}
 	
