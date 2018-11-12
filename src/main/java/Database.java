@@ -14,7 +14,7 @@ public class Database {
 			String username = DB.USERNAME;
 			String password = DB.PASSWORD;
 			
-			connection = DriverManager.getConnection("jdbc:mariadb://" + host + ":3306/" + database, username, password + "?autoReconnect=true");
+			connection = DriverManager.getConnection("jdbc:mariadb://" + host + ":3306/" + database + "?autoReconnect=true", username, password);
 			isConnectionValid = true;
 		} catch (SQLException e) {
 			e.printStackTrace();
