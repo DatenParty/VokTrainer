@@ -67,6 +67,7 @@ public class Main {
 	
 	private static void sendResponse(HTTPServer.Response response, int status, JSONObject responseObject) {
 		response.getHeaders().add("Content-Type", "application/json");
+		response.getHeaders().add("Access-Control-Allow-Origin", "*");
 		try {
 			response.send(status, responseObject.toString());
 		} catch (IOException e) {
